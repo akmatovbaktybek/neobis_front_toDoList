@@ -1,21 +1,23 @@
 const tasks = [
-   {
-      id: '1138465078061',
-      completed: false,
-      text: 'Посмотреть новый урок по JavaScript',
-   },
-   {
-      id: '1138465078571',
-      completed: false,
-      text: 'Доделать todo',
-   },
+   // {
+   //    id: '1138465078061',
+   //    completed: false,
+   //    text: 'Посмотреть новый урок по JavaScript',
+   // },
+   // {
+   //    id: '1138465078571',
+   //    completed: false,
+   //    text: 'Доделать todo',
+   // },
 ];
 
 const taskList = document.querySelector('.todo__task-list');
 const todoForm = document.querySelector('.todo__form');
 const todoInput = document.querySelector('.todo__input');
 const todoEditButton = document.querySelector('.edit-button');
+const todoDeleteButton = document.querySelector('.delete-button');
 const todoTaskInputText = document.querySelector('.todo__description-text');
+const todoListItem = document.querySelector('.todo__list-item');
 
 const createTaskItem = () => {
    let newTaskItem = document.createElement('li');
@@ -34,7 +36,8 @@ const createTaskItem = () => {
    todoTaskInputText.className = 'todo__description-text';
    todoTaskInputText.type = 'text';
    todoTaskInputText.disabled = true;
-   todoTaskInputText.value = todoInput.value;
+   todoTaskInputText.value = todoInput.value.trim();
+   todoInput.value = '';
    // todoTaskInputText.id = 'description-input';
 
    let todoTaskButtonsContainer = document.createElement('div');
@@ -53,7 +56,6 @@ const createTaskItem = () => {
    todoTaskButtonsContainer.append(todoTaskEditButton, todoTaskDeleteButton);
 
    newTaskItem.append(taskItemMainContent);
-   todoInput.value = '';
 
    taskList.append(newTaskItem);
 
@@ -68,4 +70,9 @@ todoForm.onsubmit = function (event) {
 todoEditButton.onclick = function (event) {
    event.preventDefault();
    todoTaskInputText.disabled = false;
+}
+
+todoDeleteButton.onclick = function (event) {
+   event.preventDefault();
+   todoListItem.remove();
 }
