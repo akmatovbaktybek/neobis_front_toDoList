@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>ToDo List</title>
+</head>
+
+<body>
+
+
+   <section class="main">
+      <div class="container">
+         <div class="main__content">
+            <div class="main__todo">
+               <div class="todo__username">
+                  <div class="todo__username-title">What's Up,</div>
+                  <input type="text" class="todo__username-input" placeholder="Name here">
+               </div>
+
+               <div class="todo__title">Create a todo</div>
+
+               <form class="todo__form">
+                  <div class="todo__inputbox">
+                     <label class="todo__input-title">What's on your todo list?</label>
+                     <input type="text" class="todo__input" placeholder="e.g. get a milk" id="todo-input">
+                  </div>
+
+                  <div class="todo__category">
+                     <div class="todo__category-title">Pick a category</div>
+                     <div class="todo__category-pickbox">
+                        <div class="todo__pickbox-item">
+                           <input type="radio" class="todo__input-radio" id="radio">
+                           <label for="radio" class="todo__input-description">Business</label>
+                        </div>
+                        <div class="todo__pickbox-item">
+                           <input type="radio" class="todo__input-radio red-radio" id="radio-2">
+                           <label for="radio-2" class="todo__input-description">Personal</label>
+                        </div>
+                     </div>
+                  </div>
+
+                  <button type="submit" class="todo__add-button">
+                     Add todo
+                  </button>
+               </form>
+
+               <div class="todo__title">Todo list</div>
+
+               <ol class="todo__task-list">
+                  <li class="todo__list-item">
+                     <div class="todo__item-content">
+                        <div class="todo__task-description">
+                           <div class="todo__description-category"></div>
+                           <input type="text" class="todo__description-text" disabled value="Complete todo"
+                              id="description-input">
+                        </div>
+                        <div class="todo__task-buttons">
+                           <button class="todo__task-button edit-button">Edit</button>
+                           <button class="todo__task-button delete-button">Delete</button>
+                        </div>
+                     </div>
+                  </li>
+               </ol>
+
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script src="js/script.js"></script>
+</body>
+
+</html>
